@@ -13,15 +13,6 @@ const App = () => {
       {/* Mapa */}
       <MapComponent />
 
-      {/* Botones flotantes */}
-      <div className="floating-buttons">
-        <button className="btn btn-primary btn-floating">
-          <i className="bi bi-eye"></i>
-        </button>
-        <button className="btn btn-primary btn-floating">
-          <i className="bi bi-signpost"></i>
-        </button>
-      </div>
     </div>
   );
 };

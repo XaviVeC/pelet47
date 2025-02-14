@@ -1,15 +1,9 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
+  padding: 200px;
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
@@ -33,16 +27,8 @@
   }
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-/* App.css */
-.app-container {
-  position: relative;
+body {
+    background-color: #001a00;
 }
 
 .floating-buttons {
@@ -52,8 +38,23 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  z-index: 9999;
 }
 
+/* Estilos para los botones flotantes */
+.floating-buttons {
+  position: fixed; /* Fija los botones en la pantalla */
+  bottom: 20px; /* Distancia desde la parte inferior */
+  right: 20px; /* Distancia desde la parte derecha */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000; /* Asegúrate de que estén por encima del mapa */
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para cada botón flotante */
 .btn-floating {
   width: 50px;
   height: 50px;
@@ -61,12 +62,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #007bff; /* Color de fondo */
+  color: white; /* Color del icono */
+  border: none; /* Sin borde */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para efecto flotante */
 }
-
-/* Asegura que el mapa ocupe todo el espacio disponible */
-#map {
-  height: calc(100vh - 56px); /* Resta la altura del header */
-  width: 100%;
-  margin: 0;
+/* Estilos para el contenedor del mapa */
+.leaflet-container {
+  height: calc(100vh); /* Resta la altura del header */
+  width: 100vw; /* Ocupa todo el ancho de la pantalla */
   padding: 0;
 }
