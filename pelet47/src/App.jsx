@@ -63,7 +63,7 @@ const App = () => {
                             className="btn-floating">
                           <i className="bi bi-eye"></i>
                         </button>
-                        <button className="btn-floating" onClick={() => calculateRoute()}>
+                        <button style={{height:"40px"}} className="btn-floating" onClick={() => calculateRoute()}>
                           <i className="bi bi-signpost"></i>
                           <span style={{marginLeft:"5px"}}>Calcula la teva ruta saludable!</span>
                         </button>

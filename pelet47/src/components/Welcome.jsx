@@ -46,7 +46,7 @@ const Welcome = () => {
           marginBottom: "10px",
         }}
       >
-        Register
+      Inicia Sessió
       </button>
 
       {/* Botón Log In */}
@@ -62,7 +62,7 @@ const Welcome = () => {
           cursor: "pointer",
         }}
       >
-        Log In
+      Registrar-se
       </button>
     </div>
   );

@@ -9,7 +9,7 @@ const MapComponent = ({conquevoy}) => {
   const [startLocation, setStartLocation] = useState(null); // Estado para el marcador de inicio
   const [endLocation, setEndLocation] = useState(null); // Estado para el marcador de fin
   const [searchStart, setSearchStart] = useState(""); // Estado para la barra de búsqueda de inicio
-      const [value, setValue] = useState(0); // Valor inicial en el centro (0-6)
+  const [value, setValue] = useState(0); // Valor inicial en el centro (0-6)
   const [searchEnd, setSearchEnd] = useState(""); // Estado para la barra de búsqueda de fin
   const [data, setData] = useState(null); // Estado para almacenar la respuesta de la API
   const [result, setResult] = useState(null);
@@ -128,7 +128,7 @@ const MapComponent = ({conquevoy}) => {
         for(var polygon of result.features) {
             const latLngs = polygon['geometry'].coordinates[0].map(coord => [coord[1], coord[0]]);
             //latLngs.push([polygon['geometry'].coordinates[1], point['geometry'].coordinates[0]]);
-            polygonRef.current = L.polygon(latLngs).addTo(mapInstance.current);
+            if(Math.random() < 0.8) polygonRef.current = L.polygon(latLngs).addTo(mapInstance.current);
         }
 
         setResult(result); // Almacenar la respuesta en el estado

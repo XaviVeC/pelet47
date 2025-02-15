@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../App.css";
+import { guardarUsuarios, obtenerUsuarios } from "../users";
 import background from "../assets/bg.jpeg";
 
 function LoginPage() {
@@ -7,20 +8,31 @@ function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    fetch("/api/login",
-        {
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            },
-            method: "POST",
-            body: JSON.stringify({name: name, user: email, pass: password})
-        })
-        .then(function(res){ console.log(res) })
-        .catch(function(res){ console.log(res) })
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const usuarios = obtenerUsuarios();
+
+    // Verificar si el correo ya existe
+    const usuarioExistente = usuarios.find((u) => u.email === email);
+
+    if (usuarioExistente) {
+      alert("El correo ya está registrado.");
+      return;
+    }
+
+    // Agregar nuevo usuario
+    const nuevoUsuario = { name, email, password };
+    usuarios.push(nuevoUsuario);
+
+    // Guardar usuarios actualizados en localStorage
+    guardarUsuarios(usuarios);
+
+    alert("Usuario registrado exitosamente.");
+
+    // Redirigir a la página de inicio de sesión
+    window.location.href = "/signin";
+  };
 
   return (
     <div

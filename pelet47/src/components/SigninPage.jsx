@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { guardarUsuarios, obtenerUsuarios } from "../users";
 import "../App.css";
 import background from "../assets/background.png";
 
@@ -6,9 +7,30 @@ function SigninPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const usuarios = obtenerUsuarios();
+
+    console.log(usuarios);
+    // Buscar al usuario por email y contraseña
+    const usuario = usuarios.find(
+      (u) => u.email === email && u.password === password
+    );
+
+    if (!usuario) {
+      alert("Credenciales incorrectas.");
+      return;
+    }
+
+    localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
+
+    alert(`¡Bienvenido, ${usuario.name}!`);
+
+    // Redirigir a la página principal o dashboard
+    window.location.href = "/map";
+  };
+  
 
   return (
     <div
