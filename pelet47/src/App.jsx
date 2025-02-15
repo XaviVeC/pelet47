@@ -6,7 +6,7 @@ import MapComponent from './components/MapComponent';
 
 // Componente App
 const App = () => {
-  const [conquevoy, setConquevoy] = useState("driving-car");
+  const [conquevoy, setConquevoy] = useState(["driving-car", 0]);
 
   function changeConquevoy(input) {
         setConquevoy(input)

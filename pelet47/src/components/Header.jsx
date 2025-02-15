@@ -20,18 +20,18 @@ const Header = ({setConquevoy}) => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" onClick={() => setConquevoy("driving-car")} href="#">
+              <a className="nav-link" onClick={() => setConquevoy(["driving-car", 0])} href="#">
                  Conduïm! 
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" onClick={() => setConquevoy("foot-walking")} href="#">
-                Camina!
+              <a className="nav-link" onClick={() => setConquevoy(["foot-walking", 1])} href="#">
+                Caminem!
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Opción 3
+              <a className="nav-link" onClick={() => setConquevoy(["foot-walking", 2])} href="#">
+                Correm!
               </a>
             </li>
           </ul>

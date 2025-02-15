@@ -102,7 +102,7 @@ const MapComponent = ({conquevoy}) => {
     if (!startLocation || !endLocation) return;
 
     const apiKey = "5b3ce3597851110001cf6248827fe6f76cda4c0685972c545cb452d2"; // OpenRouteService no requiere clave para uso básico
-    const url = `https://api.openrouteservice.org/v2/directions/${conquevoy}?api_key=${apiKey}&start=${startLocation[1]},${startLocation[0]}&end=${endLocation[1]},${endLocation[0]}`;
+    const url = `https://api.openrouteservice.org/v2/directions/${conquevoy[0]}?api_key=${apiKey}&start=${startLocation[1]},${startLocation[0]}&end=${endLocation[1]},${endLocation[0]}`;
 
     fetch(url)
       .then((response) => response.json())
