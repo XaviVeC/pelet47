@@ -23,18 +23,42 @@
   }
 }
 
-/* Estilos para los botones flotantes */
 .floating-buttons {
-  position: fixed; /* Fija los botones en la pantalla */
-  bottom: 20px; /* Distancia desde la parte inferior */
-  right: 20px; /* Distancia desde la parte derecha */
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 1000; /* Asegúrate de que estén por encima del mapa */
-  margin: 0;
-  padding: 0;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaciado entre botones */
+    z-index: 1000;
 }
+
+.btn-floating {
+    background-color: #007bff; /* Azul Bootstrap */
+    color: white;
+    border: none;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-floating:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+    transform: scale(1.1);
+}
+
+.btn-floating i {
+    font-size: 26px;
+}
+
+
 body {
     background-color: #001a00;
 }
