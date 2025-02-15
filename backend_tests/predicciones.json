@@ -1,0 +1,212 @@
+[
+    {
+        "fecha": "2025-02-15",
+        "dia_semana": 5,
+        "estaciones": [
+            {
+                "estacion": 43148022,
+                "latitud": 41.11560103695832,
+                "longitud": 1.2548899134732905,
+                "prediccion": 20.53
+            },
+            {
+                "estacion": 43148003,
+                "latitud": 41.118789805545,
+                "longitud": 1.2448510043634218,
+                "prediccion": 21.24
+            },
+            {
+                "estacion": 43148028,
+                "latitud": 41.12030866517928,
+                "longitud": 1.2556923620231084,
+                "prediccion": 27.48
+            },
+            {
+                "estacion": 43148001,
+                "latitud": 41.11320481048717,
+                "longitud": 1.247594468940278,
+                "prediccion": 17.48
+            }
+        ]
+    },
+    {
+        "fecha": "2025-02-16",
+        "dia_semana": 6,
+        "estaciones": [
+            {
+                "estacion": 43148022,
+                "latitud": 41.11560103695832,
+                "longitud": 1.2548899134732905,
+                "prediccion": 16.86
+            },
+            {
+                "estacion": 43148003,
+                "latitud": 41.118789805545,
+                "longitud": 1.2448510043634218,
+                "prediccion": 20.14
+            },
+            {
+                "estacion": 43148028,
+                "latitud": 41.12030866517928,
+                "longitud": 1.2556923620231084,
+                "prediccion": 29.36
+            },
+            {
+                "estacion": 43148001,
+                "latitud": 41.11320481048717,
+                "longitud": 1.247594468940278,
+                "prediccion": 20.05
+            }
+        ]
+    },
+    {
+        "fecha": "2025-02-17",
+        "dia_semana": 0,
+        "estaciones": [
+            {
+                "estacion": 43148022,
+                "latitud": 41.11560103695832,
+                "longitud": 1.2548899134732905,
+                "prediccion": 36.41
+            },
+            {
+                "estacion": 43148003,
+                "latitud": 41.118789805545,
+                "longitud": 1.2448510043634218,
+                "prediccion": 36.94
+            },
+            {
+                "estacion": 43148028,
+                "latitud": 41.12030866517928,
+                "longitud": 1.2556923620231084,
+                "prediccion": 36.67
+            },
+            {
+                "estacion": 43148001,
+                "latitud": 41.11320481048717,
+                "longitud": 1.247594468940278,
+                "prediccion": 31.89
+            }
+        ]
+    },
+    {
+        "fecha": "2025-02-18",
+        "dia_semana": 1,
+        "estaciones": [
+            {
+                "estacion": 43148022,
+                "latitud": 41.11560103695832,
+                "longitud": 1.2548899134732905,
+                "prediccion": 40.07
+            },
+            {
+                "estacion": 43148003,
+                "latitud": 41.118789805545,
+                "longitud": 1.2448510043634218,
+                "prediccion": 37.25
+            },
+            {
+                "estacion": 43148028,
+                "latitud": 41.12030866517928,
+                "longitud": 1.2556923620231084,
+                "prediccion": 47.79
+            },
+            {
+                "estacion": 43148001,
+                "latitud": 41.11320481048717,
+                "longitud": 1.247594468940278,
+                "prediccion": 28.2
+            }
+        ]
+    },
+    {
+        "fecha": "2025-02-19",
+        "dia_semana": 2,
+        "estaciones": [
+            {
+                "estacion": 43148022,
+                "latitud": 41.11560103695832,
+                "longitud": 1.2548899134732905,
+                "prediccion": 28.1
+            },
+            {
+                "estacion": 43148003,
+                "latitud": 41.118789805545,
+                "longitud": 1.2448510043634218,
+                "prediccion": 18.46
+            },
+            {
+                "estacion": 43148028,
+                "latitud": 41.12030866517928,
+                "longitud": 1.2556923620231084,
+                "prediccion": 36.89
+            },
+            {
+                "estacion": 43148001,
+                "latitud": 41.11320481048717,
+                "longitud": 1.247594468940278,
+                "prediccion": 23.95
+            }
+        ]
+    },
+    {
+        "fecha": "2025-02-20",
+        "dia_semana": 3,
+        "estaciones": [
+            {
+                "estacion": 43148022,
+                "latitud": 41.11560103695832,
+                "longitud": 1.2548899134732905,
+                "prediccion": 48.72
+            },
+            {
+                "estacion": 43148003,
+                "latitud": 41.118789805545,
+                "longitud": 1.2448510043634218,
+                "prediccion": 42.7
+            },
+            {
+                "estacion": 43148028,
+                "latitud": 41.12030866517928,
+                "longitud": 1.2556923620231084,
+                "prediccion": 49.13
+            },
+            {
+                "estacion": 43148001,
+                "latitud": 41.11320481048717,
+                "longitud": 1.247594468940278,
+                "prediccion": 40.31
+            }
+        ]
+    },
+    {
+        "fecha": "2025-02-21",
+        "dia_semana": 4,
+        "estaciones": [
+            {
+                "estacion": 43148022,
+                "latitud": 41.11560103695832,
+                "longitud": 1.2548899134732905,
+                "prediccion": 40.66
+            },
+            {
+                "estacion": 43148003,
+                "latitud": 41.118789805545,
+                "longitud": 1.2448510043634218,
+                "prediccion": 32.69
+            },
+            {
+                "estacion": 43148028,
+                "latitud": 41.12030866517928,
+                "longitud": 1.2556923620231084,
+                "prediccion": 44.95
+            },
+            {
+                "estacion": 43148001,
+                "latitud": 41.11320481048717,
+                "longitud": 1.247594468940278,
+                "prediccion": 36.42
+            }
+        ]
+    }
+]
