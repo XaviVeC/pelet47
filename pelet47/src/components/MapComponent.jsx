@@ -16,7 +16,8 @@ const MapComponent = ({conquevoy}) => {
   const [zones, setZones] = useState(null);
   const [loading, setLoading] = useState(true); // Estado para almacenar la respuesta de la API
   const [error, setError] = useState(true); // Estado para almacenar la respuesta de la API
-  const [predicciones, setPredicciones] = useState([]); // Estado para almacenar la respuesta de la API
+  const [predicciones, setPredicciones] = useState(true); // Estado para almacenar la respuesta de la API
+  const [showPred, setShowPred] = useState(null); // Estado para almacenar la respuesta de la API
 
   const mapRef = useRef(null); // Referencia al mapa
   const mapInstance = useRef(null); // Instancia del mapa
@@ -26,27 +27,39 @@ const MapComponent = ({conquevoy}) => {
   const polygonRef = useRef(null)
   const buttonRef = useRef([]);
 
+  function handleViewPrediction(event) {
+    setShowPred(!showPred);
+
+     buttonRef.current.forEach((layer) => {
+        if (layer instanceof L.Circle) {
+          mapInstance.current.removeLayer(layer);
+        }
+      });
+  }
+
   function handleChangeSlider(event) {
     const newValue = Number(event.target.value);
     setValue(newValue);
 
      buttonRef.current.forEach((layer) => {
         if (layer instanceof L.Circle) {
-          mapRef.current.removeLayer(layer);
+          mapInstance.current.removeLayer(layer);
         }
       });
     
-      //predicciones[value].estaciones.forEach(
-      predicciones.forEach(
-        (pred) => {
-           //buttonRef.current.append( L.circle([pred.lat, pred.lng], {
-           buttonRef.current.append( L.circle([1.2166191763128922, 41.12438826479462], {
-              radius: Math.max(17.48 * 100, 500), // Escala ajustable
-              fillColor: "red",
-              color: "transparent",
-              fillOpacity: Math.min(0.2 + pred.predicion / 100, 0.7), // Difuminado
-            }).addTo(mapRef)
-           )});
+      if(showPred) {
+          predicciones[value].estaciones.forEach(
+            (pred) => {
+                buttonRef.append(L.circle([pred.latitud, pred.longitud], {
+                  radius: Math.max(pred.prediccion * 3, 500), // Escala ajustable
+                  fillColor: "red",
+                  color: "transparent",
+                  fillOpacity: Math.min(0.2 + pred.prediccion / 100, 0.7), // Difuminado
+                }).addTo(mapInstance.current))
+               });
+      }
+
+      console.log(predicciones);
     }
 
   function decodePolyline(encodedPolyline, includeElevation) {
@@ -119,7 +132,7 @@ const MapComponent = ({conquevoy}) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://34.235.156.167/voronoii"); // Llamada GET
+        const response = await fetch("http://34.207.228.4/voronoiii"); // Llamada GET
         if (!response.ok) {
           throw new Error("Error en la solicitud");
         }
@@ -146,13 +159,13 @@ const MapComponent = ({conquevoy}) => {
     useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://34.235.156.167/predicciones"); // Llamada GET
+        const response = await fetch("http://34.207.228.4/predicciones"); // Llamada GET
         if (!response.ok) {
           throw new Error("Error en la solicitud");
         }
         const result = await response.json(); // Convertir la respuesta a JSON
 
-        setPredicciones(predicciones); // Almacenar la respuesta en el estado
+        setPredicciones(result); // Almacenar la respuesta en el estado
       } catch (error) {
         setError(error.message); // Manejar errores
       } finally {
@@ -285,6 +298,41 @@ const MapComponent = ({conquevoy}) => {
         className="slider"
       />
       <span className="slider-value">{value} dies</span>
+                      {/* Botones flotantes */}
+                      <div style= {{
+                        position: "fixed",
+                        bottom: "0px",
+                        left: "600px",
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "15px", /* Espaciado entre botones */
+                        zIndex: "1000"
+                      }} className="floating-buttons">
+                        <button style={{
+                            backgroundColor: "#007bff", /* Azul Bootstrap */
+                            color: "white",
+                            border: "none",
+                            width: "55px",
+                            height: "55px",
+                            marginLeft: "200px",
+                            borderRadius: "50%",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            fontSize: "24px",
+                            cursor: "pointer",
+                            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+                            transition: "background-color 0.3s, transform 0.2s"
+                        }}
+                            onClick={handleViewPrediction}
+                            className="btn-floating">
+                          <i className="bi bi-eye"></i>
+                        </button>
+                        <button style={{height:"40px"}} className="btn-floating" onClick={() => calculateRoute()}>
+                          <i className="bi bi-signpost"></i>
+                          <span style={{marginLeft:"5px"}}>Calcula la teva ruta saludable!</span>
+                        </button>
+                      </div>
     </div>
 
     </div>
