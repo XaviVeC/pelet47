@@ -1,8 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Header from './components/Header';
 import MapComponent from './components/MapComponent';
+import SigninPage from './components/SigninPage';
+import LoginPage from './components/LoginPage';
+import Welcome from './components/Welcome';
 
 // Componente App
 const App = () => {
@@ -14,13 +24,23 @@ const App = () => {
   }
 
   return (
-    <div className="app-container">
-      <Header  setConquevoy={changeConquevoy}/>
+      <Router>
+            <Routes>
+                <Route path="/" element={<Welcome/>}/>
+                <Route path="/map" element={
+                    <div className="app-container">
+                      <Header  setConquevoy={changeConquevoy}/>
 
-      {/* Mapa */}
-      <MapComponent conquevoy={conquevoy}/>
+                      {/* Mapa */}
+                      <MapComponent conquevoy={conquevoy}/>
 
-    </div>
+                    </div>
+                }/>
+
+                <Route path="/signin" element={<SigninPage/>} />
+                <Route path="/login" element={<LoginPage/>} />
+          </Routes>
+      </Router>
   );
 };
 
