@@ -1,7 +1,7 @@
 // src/components/Header.jsx
 import React from 'react';
 
-const Header = () => {
+const Header = ({setConquevoy}) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div className="container-fluid">
@@ -20,13 +20,13 @@ const Header = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Opción 1
+              <a className="nav-link" onClick={() => setConquevoy("driving-car")} href="#">
+                 Conduïm! 
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Opción 2
+              <a className="nav-link" onClick={() => setConquevoy("foot-walking")} href="#">
+                Camina!
               </a>
             </li>
             <li className="nav-item">
